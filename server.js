@@ -17,7 +17,7 @@ server.use(express.static(__dirname + '/public'))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
 server.use(flash())
 
-require('./config/passport')(passport)
+// require('./config/passport')(passport)
 server.use(passport.initialize())
 server.use(passport.session())
 
