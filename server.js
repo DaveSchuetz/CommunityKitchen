@@ -6,14 +6,14 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
-const usersController = require('./controllers/users')
+const usersController = require('./controllers/user')
 
 server.use(cookieParser())
-server.use(bodyParser())
+server.use(bodyParser.urlencoded({ extended: true }))
 
 server.set('view engine', 'hbs')
 server.use(express.static(__dirname + '/public'))
-
+server.use(require("./routes/index.js"))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
 server.use(flash())
 
@@ -26,7 +26,7 @@ server.use(function(req, res, next) {
   next()
 })
 
-server.use('/', usersController)
+// server.use('/', usersController)
 
 server.set('port', process.env.PORT || 8236)
 

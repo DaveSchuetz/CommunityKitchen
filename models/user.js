@@ -8,7 +8,7 @@ const User = new Schema({
         image: String
     },
     cookbooks:[{
-        type: Schema.Types.ObjecdId,
+        type: Schema.Types.ObjectId,
         ref: "Cookbook"
     }],
     recipes: [{
