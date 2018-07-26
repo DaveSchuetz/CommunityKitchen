@@ -3,8 +3,9 @@ const passport = require("passport")
 
 module.exports = {
     show: (req, res) =>{
-        User.findOne({ _id:req.params.id})
-        res.render("user/show", { user })
+        User.findOne({ screenName:req.params.screenName})
+        .then(user => {
+            res.render("user/show", {user})})
     },
     login: (req, res) => {
         res.render("user/login", {message: req.flash("loginMessage")})

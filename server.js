@@ -17,7 +17,7 @@ server.use(require("./routes/index.js"))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
 server.use(flash())
 
-// require('./config/passport')(passport)
+require('./config/passport')(passport)
 server.use(passport.initialize())
 server.use(passport.session())
 
@@ -26,7 +26,7 @@ server.use(function(req, res, next) {
   next()
 })
 
-// server.use('/', usersController)
+server.use('/', usersController)
 
 server.set('port', process.env.PORT || 8236)
 

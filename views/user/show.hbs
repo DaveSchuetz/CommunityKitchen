@@ -1,0 +1,23 @@
+<section>
+  <h2>{{user.local.screenName}}</h2>
+  <img src="../../public/images/chef.jpg"
+  {{!-- {{#if user.cookbooks}}
+    <div class="cookbooks">
+      {{#each user.cookbooks}}
+         {{> 'cookbook'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Cookbooks yet</p>
+  {{/if}} --}}
+  {{#if user.recipes}}
+    <div class="recipes">
+      {{#each user.recipes}}
+         {{> 'recipe'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Recipes yet</p>
+  {{/if}}
+  
+</section>
