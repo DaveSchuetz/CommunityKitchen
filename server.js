@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
 const usersController = require('./controllers/user')
-
+hbs.registerPartials(__dirname + "/views/partial")
 server.use(cookieParser())
 server.use(bodyParser.urlencoded({ extended: true }))
 
@@ -17,16 +17,16 @@ server.use(require("./routes/index.js"))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
 server.use(flash())
 
-require('./config/passport')(passport)
-server.use(passport.initialize())
-server.use(passport.session())
+// require('./config/passport')(passport)
+// server.use(passport.initialize())
+// server.use(passport.session())
 
 server.use(function(req, res, next) {
   res.locals.currentUser = req.user
   next()
 })
 
-server.use('/', usersController)
+// server.use('/', usersController)
 
 server.set('port', process.env.PORT || 8236)
 

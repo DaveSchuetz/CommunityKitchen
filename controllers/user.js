@@ -1,11 +1,14 @@
 const User = require("../models/User")
+const Recipe = require("../models/Recipe")
 const passport = require("passport")
 
 module.exports = {
     show: (req, res) =>{
-        User.findOne({ screenName:req.params.screenName})
+        User.findOne({ name: req.params.name})
+        .populate("recipes")
         .then(user => {
-            res.render("user/show", {user})})
+            res.render("user/show", {user})
+        })
     },
     login: (req, res) => {
         res.render("user/login", {message: req.flash("loginMessage")})

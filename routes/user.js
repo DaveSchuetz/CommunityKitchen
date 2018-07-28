@@ -7,6 +7,6 @@ router.post('/login', userController.createLogin)
 router.get('/sign-up', userController.signUp)
 router.post('/sign-up', userController.createSignUp)
 router.get('/logout', userController.logout)
-router.get('/:id', userController.show)
+router.get('/:name', userController.show)
 
 module.exports = router

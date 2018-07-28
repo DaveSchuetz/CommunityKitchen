@@ -2,10 +2,9 @@ const mongoose = require("../db/connection")
 const Schema = mongoose.Schema
 const User = new Schema({
     local:{
-        screenName: String,
+        name: String,
         email: String,
-        password: String,
-        image: String
+        password: String
     },
     cookbooks:[{
         type: Schema.Types.ObjectId,

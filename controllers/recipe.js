@@ -2,17 +2,10 @@ const Recipe = require("../models/Recipe")
 
 module.exports = {
   show: (req, res) => {
-    Recipe.findOne({ _id: req.params.id })
+    Recipe.findOne({ name: req.params.name })
       .populate("author")
-      .exec(function(err, recipe) {
-        Comment.populate(recipe.comments, { path: "author" }, function(
-          err,
-          comments
-        ) {
-          recipe.comments = comments
-          console.log(recipe)
-          res.render("recipe/show", recipe)
-        })
+      .then(recipe =>{
+        res.render("recipe/show", {recipe})
       })
   },
   new: (req, res) => {
