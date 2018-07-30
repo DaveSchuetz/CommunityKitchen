@@ -4,6 +4,6 @@ const recipeController = require('../controllers/recipe')
 
 router.post("/", recipeController.create)
 router.get("/new", recipeController.new)
-router.get("/:name", recipeController.show)
+router.get("/:id", recipeController.show)
 
 module.exports = router

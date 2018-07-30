@@ -1,7 +1,8 @@
 <section>
   <h2>Welcome Back {{user.local.name}}</h2>
-  {{!-- <img src="../../public/images/chef.jpg" alt ="Chef Image"> --}}
-  {{!-- {{#if user.cookbooks}}
+  <img src="../images/chef.jpg" alt ="Chef Image">
+  <h3>Cookbooks</h3>
+  {{#if user.cookbooks}}
     <div class="cookbooks">
       {{#each user.cookbooks}}
          {{> 'cookbook'}}
@@ -9,7 +10,8 @@
     </div>
   {{else}}
     <p>No Cookbooks yet</p>
-  {{/if}} --}}
+  {{/if}}
+  <h3>Recipes</h3>
   {{#if user.recipes}}
     <div class="recipes">
       {{#each user.recipes}}

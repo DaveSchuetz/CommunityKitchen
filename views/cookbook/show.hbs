@@ -1,0 +1,12 @@
+<section>
+    <h2>{{cookbook.title}}</h2>
+    {{#if cookbook.recipe}}
+    <div class="recipes"></div>
+        {{#each cookbook.recipes}}
+            {{> 'recipe'}}
+        {{/each}}
+    </div>
+  {{else}}
+    <p>No Recipes yet</p>
+  {{/if}}
+</section>

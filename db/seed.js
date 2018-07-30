@@ -26,8 +26,6 @@ User.find({}).remove(() => {
                     author: user._id
                 }) .then(recipe => {
                     user.recipes.push(recipe)
-                }).then(() => {
-                    user.save(err => console.log(err))
                 }),
                 Recipe.create({
                     name: "Turkey Meatballs",
@@ -38,10 +36,10 @@ User.find({}).remove(() => {
                     author: user._id
                 }).then(recipe => {
                     user.recipes.push(recipe)
-                }).then(() => {
-                    user.save(err => console.log(err))
                 })
-            ])
+            ]).then(() => {
+                user.save(err => console.log(err))
+            })
         })
         User.create({
             local: {

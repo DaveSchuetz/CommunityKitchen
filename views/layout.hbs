@@ -6,8 +6,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <title>Community Kitchen</title>
   </head>
+  <header><h1>Community Kitchen: Recipe Sharing Network</h1></header>
+  <nav>
+    <div id="user-menu">
+      <ul>
+        {{#if currentUser}}
+          <li><a href="/user/logout">Logout {{currentUser.local.name}}</a></li>
+        {{else}}
+          <li><a href="/user/login">Login</a></li>
+          <li><a href="/user/signup">Signup</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
   <body>
-    <h1>Community Kitchen: Recipe Sharing Network</h1>
+    
 
     <main>
       {{{ body }}}
