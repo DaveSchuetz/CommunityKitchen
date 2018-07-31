@@ -36,5 +36,11 @@ module.exports = {
     logout: (req, res) => {
         req.logout();
         res.redirect("/")
-      }
+      },
+    delete: (req, res) => {
+        User.findOneAndRemove({ _id: req.params.id})
+        .then(() =>{
+            res.redirect('/')
+        })
+    }
 }

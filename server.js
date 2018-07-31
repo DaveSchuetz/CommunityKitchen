@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
+const methodOverride = require('method-override')
 // const usersController = require('./controllers/user')
 hbs.registerPartials(__dirname + "/views/partial")
 server.use(cookieParser())
@@ -20,7 +21,7 @@ server.use(express.static(__dirname + '/public'))
 require('./config/passport')(passport)
 server.use(passport.initialize())
 server.use(passport.session())
-
+server.use(methodOverride('_method'))
 server.use(function(req, res, next) {
   res.locals.currentUser = req.user
   next()
