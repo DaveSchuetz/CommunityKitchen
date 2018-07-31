@@ -1,1 +1,9 @@
-Community Kitchen
+{{#if db.recipes}}
+    <div class="recipes">
+      {{#each db.recipes}}
+         {{> 'recipe'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Recipes available</p>
+  {{/if}}

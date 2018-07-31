@@ -11,7 +11,7 @@ User.find({}).remove(() => {
       Recipe.find({}).remove(() => {
         User.create({
             local: {
-                name: "Tony",
+                screenName: "Tony",
                 email: "cheftony@gmail.com",
                 password: createPassword("tonyisbest")
             }
@@ -43,7 +43,7 @@ User.find({}).remove(() => {
         })
         User.create({
             local: {
-                name: "Jen",
+                screenName: "Jen",
                 email: "jen.jones@gmail.com",
                 password: createPassword("Chowda4all")
             }
@@ -65,7 +65,7 @@ User.find({}).remove(() => {
         })
         User.create({
             local: {
-                name: "Steve",
+                screenName: "Steve",
                 email: "Steve22@gmail.com",
                 password: createPassword("Steve22")
             }

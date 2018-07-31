@@ -11,7 +11,8 @@
     <div id="user-menu">
       <ul>
         {{#if currentUser}}
-          <li><a href="/user/logout">Logout {{currentUser.local.name}}</a></li>
+          <li><a href="/user/logout">Logout {{currentUser.local.screenName}}</a></li>
+          <li><a href="/user/{{currentUser._id}}">{{currentUser.local.screenName}}</a></li>
         {{else}}
           <li><a href="/user/login">Login</a></li>
           <li><a href="/user/signup">Signup</a></li>
@@ -20,7 +21,13 @@
     </div>
   </nav>
   <body>
-    
+    {{#if currentUser}}
+          <li><a href="#">Cookbooks</a></li>
+          <li><a href="#">Recipes</a></li>
+        {{else}}
+          <li><a href="/user/login">Login</a></li>
+          <li><a href="/user/signup">Signup</a></li>
+        {{/if}}
 
     <main>
       {{{ body }}}
