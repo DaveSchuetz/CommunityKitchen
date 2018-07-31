@@ -1,9 +1,7 @@
-{{#if db.recipes}}
+{{#if recipes}}
     <div class="recipes">
-      {{#each db.recipes}}
+      {{#each recipes}}
          {{> 'recipe'}}
       {{/each}}
     </div>
-  {{else}}
-    <p>No Recipes available</p>
   {{/if}}

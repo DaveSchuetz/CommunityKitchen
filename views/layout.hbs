@@ -10,6 +10,7 @@
   <nav>
     <div id="user-menu">
       <ul>
+        <li><a href="/">Home</a></li>
         {{#if currentUser}}
           <li><a href="/user/logout">Logout {{currentUser.local.screenName}}</a></li>
           <li><a href="/user/{{currentUser._id}}">{{currentUser.local.screenName}}</a></li>
