@@ -6,7 +6,7 @@ const passport = require("passport")
 module.exports = {
     show: (req, res) =>{
         User.findOne({ _id: req.params.id})
-        .populate("recipes")
+        // .populate("recipes")
         .then(user => {
             res.render("user/show", {user})
         })
@@ -41,6 +41,13 @@ module.exports = {
         User.findOneAndRemove({ _id: req.params.id})
         .then(() =>{
             res.redirect('/')
+        })
+    },
+    recipes: (req, res) =>{
+        User.findOne({ _id: req.params.id})
+        .populate("recipes")
+        .then(user => {
+            res.render("user/recipes", {user})
         })
     }
 }

@@ -13,7 +13,11 @@ module.exports = {
   },
   create: (req, res) => {
     Recipe.create({
-      content: req.body.recipe.content,
+      name: req.body.name,
+      ingredient: [req.body.ingredient],
+      directions: req.body.directions,
+      description: req.body.description,
+      more: req.body.more,
       author: req.user._id
     }).then(recipe => {
       req.user.recipes.push(recipe)
@@ -22,6 +26,12 @@ module.exports = {
       })
     })
   },
+  delete: (req, res) => {
+    Recipe.findOneAndRemove({ _id: req.params.id})
+    .then(() =>{
+        res.redirect('/')
+    })
+},
   requireAuth: function(req, res, next) {
     if (req.isAuthenticated()) {
       next()

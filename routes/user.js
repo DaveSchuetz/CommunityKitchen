@@ -3,6 +3,7 @@ const router = express.Router()
 const userController = require('../controllers/user.js')
 
 router.get('/login', userController.login)
+router.get('/:id/recipes', userController.recipes)
 router.post('/login', userController.createLogin)
 router.get('/signup', userController.signUp)
 router.post('/signup', userController.createSignUp)
