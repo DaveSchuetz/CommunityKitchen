@@ -1,11 +1,11 @@
 <section>
-    {{#if message}}
-        <div>{{message}}</div>
-    {{/if}}
     <h3>Create Account</h3>
     <form action="/user/signup" method="POST">
         <p>
             <input type="email" name="email" placeholder="Email">
+        {{#if message}}
+            <div>{{message}}</div>
+        {{/if}}
         </p>
         <p>
             <input type="screenName" name="screenName" placeholder="Screen Name">
@@ -13,6 +13,7 @@
         <p>
             <input type="password" name="password" placeholder="Password">
         </p>
+        
         <input class="btn" type="submit">
     </form>
 </section>

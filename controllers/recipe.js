@@ -31,12 +31,5 @@ module.exports = {
     .then(() =>{
         res.redirect('/')
     })
-},
-  requireAuth: function(req, res, next) {
-    if (req.isAuthenticated()) {
-      next()
-    } else {
-      res.redirect("/")
-    }
   }
 }

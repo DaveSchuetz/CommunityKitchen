@@ -7,15 +7,14 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
 const methodOverride = require('method-override')
-// const usersController = require('./controllers/user')
 hbs.registerPartials(__dirname + "/views/partial")
 server.use(cookieParser())
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
-server.use(flash())
+
 server.set('view engine', 'hbs')
 server.use(express.static(__dirname + '/public'))
-
+server.get('/favicon.ico', (req, res) => res.status(204))
 
 
 require('./config/passport')(passport)
@@ -26,8 +25,8 @@ server.use(function(req, res, next) {
   res.locals.currentUser = req.user
   next()
 })
+server.use(flash())
 server.use(require("./routes/index.js"))
-// server.use('/', usersController)
 
 server.set('port', process.env.PORT || 8236)
 
