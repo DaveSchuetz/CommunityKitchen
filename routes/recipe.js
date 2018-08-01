@@ -5,6 +5,8 @@ const Recipe = require("../models/Recipe")
 
 router.post("/new", isLoggedIn, recipeController.create)
 router.get("/new", isLoggedIn, recipeController.new)
+router.get("/:id/edit", currentUser, recipeController.edit)
+router.post("/:id", currentUser, recipeController.update)
 router.get("/:id", recipeController.show)
 router.delete('/:id', currentUser, recipeController.delete)
 function isLoggedIn(req, res, next) {
