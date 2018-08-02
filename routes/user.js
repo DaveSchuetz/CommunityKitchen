@@ -11,7 +11,7 @@ router.post('/signup', userController.createSignUp)
 router.get("/:id/edit", currentUser, userController.edit)
 router.post("/:id", currentUser, userController.update)
 router.get('/logout', userController.logout)
-router.get('/:id', userController.show)
+router.get('/:id', currentUser, userController.show)
 router.delete('/:id', currentUser, userController.remove)
 router.delete('/:id', currentUser, userController.delete)
 function isLoggedIn(req, res, next) {
