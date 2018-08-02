@@ -6,23 +6,11 @@
   <input  class="input" type="submit" value="Remove account">
   </form>
   <section id="user">
-  <p class="title">Cookbooks</p>
-  {{#if user.cookbooks}}
     <div>
-      {{#each user.cookbooks}}
-         {{> 'cookbook'}}
-      {{/each}}
+      <a class="title" href="/user/{{currentUser._id}}/cookbooks">Cookbooks</a>
     </div>
-  {{else}}
-    <p>No Cookbooks yet</p>
-  {{/if}}
-  <p class="title">Recipes</p>
-  {{#if user.recipes}}
     <div>
-      <a href="/user/{{currentUser._id}}/recipes">Recipes</a>
+      <a class="title" href="/user/{{currentUser._id}}/recipes">Recipes</a>
     </div>
-  {{else}}
-    <p>No Recipes yet</p>
-  {{/if}}
   
 </section>

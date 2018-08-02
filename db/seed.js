@@ -51,7 +51,7 @@ User.find({}).remove(() => {
             Promise.all([
                 Recipe.create({
                     name: "Clam Chowder",
-                    ingredient: ["16 ounces bacon, diced", "2 onions", "2 cups diced celery", "3 cans minced or chopped clams, do not drain", "8 ounce bottle clam juice", "4 cups water", "2 cups heavy cream", "6 large potatoes, cubed", "season with salt and pepper"],
+                    ingredient: ["16 ounces bacon-diced", "2 onions", "2 cups diced celery", "3 cans minced or chopped clams-do not drain", "8 ounce bottle clam juice", "4 cups water", "2 cups heavy cream", "6 large potatoes, cubed", "season with salt and pepper"],
                     directions: "Have a slow cooker ready to go. Heat a large skillet over medium-high heat. Add the diced bacon. Cook, stirring often, until bacon is crisp and the fat has been rendered. Remove the bacon from the skillet with a slotted spoon and place in a bowl. Set aside to cool. Then refrigerate until ready to serve the chowder. Carefully spoon out all but 1-2 Tablespoons of the bacon fat. Add the onions and celery to the skillet. Cook for 5-10 minutes. Add the garlic and cook for 30-60 seconds more. Transfer the mixture to the slow cooker, making sure to scrape the skillet clean with a spatula or wooden spoon. To the slow cooker, add the clam juice, undrained canned clams, water, cream, potatoes, thyme, and some of the cooked bacon. Stir well. Place lid on slow cooker and set to HIGH for 4 hours or LOW for 6-8 hours. Check to see that the potatoes are tender. Tast, Season, garnish with remaining bacon",
                     description: "New England Clam Chowder",
                     more: "Best serverd in bread bowls.",

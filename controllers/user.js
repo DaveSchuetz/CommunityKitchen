@@ -55,6 +55,13 @@ module.exports = {
             res.render("user/recipes", {user})
         })
     },
+    cookbooks: (req, res) =>{
+        User.findOne({ _id: req.params.id})
+        .populate("cookbooks")
+        .then(user => {
+            res.render("user/cookbooks", {user})
+        })
+    },
     edit: (req, res) =>{
         User.findOne({ _id: req.params.id })
         .then(user =>{

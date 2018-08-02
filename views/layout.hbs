@@ -19,7 +19,7 @@
               <ul class="nav nav-sidebar">
                 <li><a href="/">Home</a></li>
                 {{#if currentUser}}
-                  <li><a href="#">Cookbooks</a></li>
+                  <li><a href="/user/{{currentUser._id}}/cookbooks">Cookbooks</a></li>
                   <li><a href="/user/{{currentUser._id}}/recipes">Recipes</a></li>
                   <li><a href="/user/{{currentUser._id}}">{{currentUser.local.screenName}}</a></li>
                   <li><a href="/user/logout">Logout</a></li>
