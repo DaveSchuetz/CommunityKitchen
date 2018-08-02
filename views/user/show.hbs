@@ -1,13 +1,14 @@
-<section>
+
   <h2>Welcome Back {{user.local.screenName}}</h2>
   <p><a href="/user/{{user.id}}/edit">Edit Screen Name</a></p>
-  <img src="../images/chef.jpg" alt ="Chef Image">
-  <form action="/user/{{user.id}}?_method=DELETE" method="POST">
-  <input type="submit" value="Remove account">
+  <img src="/public/images/chef.png" alt ="Chef Image">
+  <form id="user-delete" action="/user/{{user.id}}?_method=DELETE" method="POST">
+  <input  class="input" type="submit" value="Remove account">
   </form>
-  <h3>Cookbooks</h3>
+  <section id="user">
+  <p class="title">Cookbooks</p>
   {{#if user.cookbooks}}
-    <div class="cookbooks">
+    <div>
       {{#each user.cookbooks}}
          {{> 'cookbook'}}
       {{/each}}
@@ -15,9 +16,9 @@
   {{else}}
     <p>No Cookbooks yet</p>
   {{/if}}
-  <h3>Recipes</h3>
+  <p class="title">Recipes</p>
   {{#if user.recipes}}
-    <div class="recipes">
+    <div>
       <a href="/user/{{currentUser._id}}/recipes">Recipes</a>
     </div>
   {{else}}

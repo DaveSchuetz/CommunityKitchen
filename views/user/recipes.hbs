@@ -1,6 +1,7 @@
-<h3>Recipes</h3>
+<div class="recipe-list">
+<p class="title">Recipes</p>
 {{#if user.recipes}}
-    <div class="recipes">
+    <div>
       {{#each user.recipes}}
          {{> 'recipe'}}
       {{/each}}
@@ -8,6 +9,7 @@
   {{else}}
     <p>No Recipes yet</p>
   {{/if}}
+  </div>
   <form action="/recipe/new" method="get">
-  <input type="submit" value="Add Recipe">
+  <input class="input" type="submit" value="Add Recipe">
   </form>

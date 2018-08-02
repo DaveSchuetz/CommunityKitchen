@@ -13,7 +13,7 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(session({secret: 'schuetz-project2-cookbook'}))
 
 server.set('view engine', 'hbs')
-server.use(express.static(__dirname + '/public'))
+server.use(express.static(__dirname ))
 server.get('/favicon.ico', (req, res) => res.status(204))
 
 

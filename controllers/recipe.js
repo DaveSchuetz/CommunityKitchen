@@ -14,7 +14,7 @@ module.exports = {
   create: (req, res) => {
     Recipe.create({
       name: req.body.name,
-      ingredient: [req.body.ingredient],
+      ingredient: req.body.ingredient.split(','),
       directions: req.body.directions,
       description: req.body.description,
       more: req.body.more,
@@ -36,7 +36,7 @@ module.exports = {
     Recipe.findOneAndUpdate({ _id: req.params.id },
     {
       name: req.body.name,
-      ingredient: [req.body.ingredient],
+      ingredient: req.body.ingredient.split(','),
       directions: req.body.directions,
       description: req.body.description,
       more: req.body.more

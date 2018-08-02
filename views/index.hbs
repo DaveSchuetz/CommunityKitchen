@@ -1,4 +1,7 @@
-{{#if recipes}}
+<section class="frontpage">
+<p class="title">Recently Shared Recipes</p>
+
+  {{#if recipes}}
     <div class="recipes">
       {{#each recipes}}
          {{> 'home'}}
@@ -8,3 +11,4 @@
   {{#if message}}
         <div>{{message}}</div>
     {{/if}}
+</section>
