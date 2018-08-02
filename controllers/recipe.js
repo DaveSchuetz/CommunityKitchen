@@ -1,4 +1,5 @@
 const Recipe = require("../models/Recipe")
+const Comment = require("../models/Comment")
 
 module.exports = {
   show: (req, res) => {
@@ -32,7 +33,26 @@ module.exports = {
       res.render("recipe/update",{recipe})
     })
 },
-  update: (req, res) =>{
+comments: (req, res) =>{
+  Recipe.findOne({ _id: req.params.id })
+  .populate("comments")
+  .then(recipe =>{
+    res.render("recipe/comments", {recipe})
+  })
+},
+comment: (req, res) =>{
+  Recipe.findOne({ _id: req.params.id })
+  .then(recipe => {
+    recipe.comments.push({
+      content: req.body.content,
+      author: req.body.author
+    })
+    recipe.save(err =>{
+      res.rediret(`/recipe/${recipe.id}/comments`)
+    })
+  })
+},
+update: (req, res) =>{
     Recipe.findOneAndUpdate({ _id: req.params.id },
     {
       name: req.body.name,

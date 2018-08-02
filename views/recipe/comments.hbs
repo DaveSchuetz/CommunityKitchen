@@ -1,4 +1,5 @@
 <h2>Comments</h2>
+  {{#if recipe.comments}}
   {{#each recipe.comments}}
     <div class="comments">
       <section>
@@ -11,3 +12,11 @@
     </form>
     </div>
   {{/each}}
+  {{else}}
+    <p>No Comments Yet</p>
+  {{/if}}
+  <form action="/recipe/{{recipe.id}}/comments?_method=PUT" method="PUT">
+        <p><textarea rows="4" cols="50" name="content" placeholder="Leave a comment..."></textarea>
+        </p>
+        <input class="btn" type="submit">
+  </form>

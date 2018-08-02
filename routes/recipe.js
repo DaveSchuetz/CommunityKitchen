@@ -8,6 +8,8 @@ router.get("/new", isLoggedIn, recipeController.new)
 router.get("/:id/edit", currentUser, recipeController.edit)
 router.post("/:id", currentUser, recipeController.update)
 router.get("/:id", recipeController.show)
+router.get("/:id/comments", isLoggedIn, recipeController.comments)
+router.put(":id/comments", isLoggedIn, recipeController.comment)
 router.delete('/:id', currentUser, recipeController.delete)
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
