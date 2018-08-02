@@ -36,9 +36,15 @@ module.exports = {
         req.logout();
         res.redirect("/")
       },
+    remove: (req,res, next) => {
+        Recipe.deleteMany({ author: req.params.id})
+        .then(() => {
+            next()
+        })
+    },
     delete: (req, res) => {
-        User.findOneAndRemove({ _id: req.params.id})
-        .then(() =>{
+        User.findByIdAndRemove(req.user.id)
+        .then(()=>{
             res.redirect('/')
         })
     },
@@ -48,5 +54,23 @@ module.exports = {
         .then(user => {
             res.render("user/recipes", {user})
         })
-    }
+    },
+    edit: (req, res) =>{
+        User.findOne({ _id: req.params.id })
+        .then(user =>{
+          res.render("user/update",{user})
+        })
+    },
+      update: (req, res) =>{
+        User.findOneAndUpdate({ _id: req.params.id },
+        {
+            local:{
+                email: req.user.local.email,
+                password: req.user.local.password,
+                screenName: req.body.screenName
+            }
+        }).then(user =>{
+          res.redirect(`/user/${user._id}`)
+        })
+      }
 }

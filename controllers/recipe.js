@@ -40,7 +40,6 @@ module.exports = {
       directions: req.body.directions,
       description: req.body.description,
       more: req.body.more
-    
     }).then(recipe =>{
       res.redirect(`/recipe/${recipe._id}`)
     })
