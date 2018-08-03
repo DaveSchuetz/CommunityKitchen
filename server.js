@@ -30,5 +30,7 @@ server.use(require("./routes/index.js"))
 
 server.set('port', process.env.PORT || 8236)
 
-server.listen(server.get('port'), () => console.log(`testing on ${server.get('port')}`))
+server.listen(server.get('port'), () => {
+  console.log(`✅ PORT: ${server.get('port')} 🌟`)
+})
 

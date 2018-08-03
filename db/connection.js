@@ -1,11 +1,9 @@
 const mongoose = require('mongoose')
+if (process.env.NODE_ENV == "production") {
+  mongoose.connect(process.env.MLAB_URL)
+} else {
+  mongoose.connect("mongodb://localhost/CommunityKitchen")
+}
 mongoose.Promise = Promise
-const mongoUri = 'mongodb://localhost/CommunityKitchen'
-mongoose
-  .connect(mongoUri)
-  .then(connection => console.log('Connection established to db'))
-  .catch(connectionError => console.log('Connection failed!', connectionError))
-
-
 
 module.exports = mongoose
