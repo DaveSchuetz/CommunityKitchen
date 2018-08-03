@@ -8,13 +8,14 @@ module.exports = {
         res.render("recipe/show", {recipe})
       })
   },
+  
   new: (req, res) => {
     res.render("recipe/new")
   },
   create: (req, res) => {
     Recipe.create({
       name: req.body.name,
-      ingredient: req.body.ingredient.split(','),
+      ingredient: req.body.ingredient.split('\n'),
       directions: req.body.directions,
       description: req.body.description,
       more: req.body.more,
@@ -36,7 +37,7 @@ module.exports = {
     Recipe.findOneAndUpdate({ _id: req.params.id },
     {
       name: req.body.name,
-      ingredient: req.body.ingredient.split(','),
+      ingredient: req.body.ingredient.split('\n'),
       directions: req.body.directions,
       description: req.body.description,
       more: req.body.more

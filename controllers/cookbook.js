@@ -31,7 +31,7 @@ module.exports = {
       update: (req, res) =>{
         Cookbook.findOneAndUpdate({ _id: req.params.id },
         {
-          name: req.body.name
+          title: req.body.title
         }).then(cookbook =>{
           res.redirect(`/cookbook/${cookbook._id}`)
         })

@@ -1,5 +1,6 @@
 const User = require("../models/User")
 const Recipe = require("../models/Recipe")
+const Cookbook = require("../models/Cookbook")
 const mongoose = require('./connection')
 mongoose.Promise = Promise
 const bcrypt = require("bcrypt-nodejs")
