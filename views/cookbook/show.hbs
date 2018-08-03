@@ -1,0 +1,19 @@
+<section>
+    <h2>{{cookbook.title}}</h2>
+    {{#if cookbook.recipe}}
+    <div></div>
+        {{#each cookbook.recipes}}
+            {{> 'recipe'}}
+        {{/each}}
+    </div>
+  {{else}}
+    <p>No Recipes yet</p>
+  {{/if}}
+  {{#if currentUser}}
+  <p><a href="/cookbook/{{cookbook.id}}/edit">Edit</a></p>
+  {{/if}}
+</section>
+<form action="/cookbook/{{cookbook.id}}?_method=DELETE" method="POST">
+  <input class="input delete" type="submit" value="Remove cookbook">
+  </form>
+  

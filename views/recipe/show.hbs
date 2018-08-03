@@ -1,0 +1,21 @@
+<section class="recipe">
+    <h2>{{recipe.name}}</h2>
+    <h3>Ingredients</h3>
+    {{#each recipe.ingredient}}
+    <p>{{this}}</p>
+    {{/each}}
+    <h3>Directions</h3>
+    <p>{{recipe.directions}}</p>
+    <h3>Description</h3>
+    <p>{{recipe.description}}</p>
+    <h3>More Info</h3>
+    <p>{{recipe.more}}</p>
+{{#if currentUser}}
+    <p><a href="/recipe/{{recipe.id}}/edit">Edit</a></p>
+    <h4>Posted by {{recipe.author.local.screenName}}</h4>
+</section> 
+
+<form action="/recipe/{{recipe.id}}?_method=DELETE" method="POST">
+  <input class="input delete" type="submit" value="Remove recipe">
+  </form>
+{{/if}}

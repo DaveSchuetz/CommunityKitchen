@@ -1,0 +1,94 @@
+body{
+    background-image: url("/public/images/pepper.jpg");
+    background-color: #C8C8C8;
+    background-repeat: repeat-y;
+    font-family: 'Dosis', sans-serif;
+}
+h1 b{
+    font-family: 'Pacifico', cursive;
+}
+.sidebar {
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    background-color: rgba(131, 173, 197,.8);
+    width: 180px;
+}
+.sidebar a {
+    display: block;
+    width: 180px;
+    padding: 10px;
+}
+header{
+    background-color: rgba(131, 173, 197,.8);
+    height: 55px;
+    text-align:center;
+}
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 220px; /* 180 + 40 */
+    }
+}
+.delete{
+    float: right;
+}
+a{
+    font-size: 20px;
+    color: rgb(146, 0, 0);
+}
+.frontpage{
+    font-size: 35px;
+    margin: 25px;
+}
+.frontpage div{
+    margin: 25px 15px;
+}
+.frontpage a{
+   font-size:35px;
+}
+#user{
+    font-size: 35px;
+    margin: 25px;
+}
+#user a {
+    font-size: 35px;
+}
+.title{
+    font-weight: bold;
+}
+.recipe-list{
+    font-size: 35px;
+    margin: 25px;
+}
+
+.input{
+    border: 2px groove black;
+}
+.recipe{
+    background-color: rgba(131, 173, 197,.6);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
+.recipe a{
+    font-size: 20px;
+}
+.recipe h3{
+    font-weight: 600;
+}
+.recipe h2{
+    font-family: 'Pacifico', cursive;
+}
+.info{
+    color: rgb(165, 69, 69);
+    font-weight: bold;
+}
+

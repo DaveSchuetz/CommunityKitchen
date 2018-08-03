@@ -1,0 +1,10 @@
+<section>
+    <h3>Change Screen Name</h3>
+    <form action="/user/{{user.id}}" method="POST">
+        <p>
+            <input type="screenName" name="screenName" value="{{user.local.screenName}}" required>
+        </p>
+        <input class="input" type="submit">
+    </form>
+    
+</section>

@@ -1,0 +1,16 @@
+<section>
+    <h3>Login</h3>
+    <form action="/user/login" method="POST">
+        <p>
+            <input type="email" name="email" placeholder="Email">
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="Password">
+        </p>
+        {{#if message}}
+            <div>{{message}}</div>
+        {{/if}}
+        <input class="btn" type="submit">
+    </form>
+    
+</section>

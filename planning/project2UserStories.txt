@@ -1,0 +1,10 @@
+User stories
+
+A guest user will browse to the landing page, they will see a list of recently shared recipes and a login/signup button. If they are signed in they will be able to browse shared recipes.
+If they are not signed in and click on the recipe, they will not see comments or author of the recipe.
+To sign up as a new user, they are going to need to create a screen name that will only be visible to other users. e-mail and password will remain private. They can choose to use a picture and fill out some bio information that will be shared with users.
+After they sign in the user page will list any created cookbooks and any recipes not in a cookbook. There will be a new cookbook button and a new recipe button.
+A new recipe will have a name, a list for the ingredients, and an area for preparation instructions that will need to be put in. Optional parameters will be available for a brief summary, and another field for any other information that you may want to add about the recipe(substitutions/ wine pairings). Will choose a category for which the recipes can be sorted
+Viewing a created recipe while not logged in will only show the recipe. While logged in it will also show a  view comments, add comments, and favorite selectors.
+A new cookbook will only need to have a name. Viewing a cookbook will show a list of recipes.
+when the user views the shared recipes, it will have a recently added list, similar to homepage. Recipes will be sorted into categories(dinner, lunch, breakfast, side dishes, desserts, drinks)

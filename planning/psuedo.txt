@@ -1,0 +1,11 @@
+//veiw page default will have a logo and the account image in the header bar of the page
+// there will be a side bar with links to the homepage, your user page, and the shared recipes list
+
+//models for recipe page
+//required name, at least 1 ingredient, and directions
+//a brief summary will just be the title again unless something is typed in
+//more info can be any kind of other information that you want to add to your recipe that is not necessary for completion
+//a share button will publish into a user searchable directory
+//someone will be able to delete their own recipe or comment
+//will need to be seperated into cateories
+

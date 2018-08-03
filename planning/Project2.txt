@@ -1,0 +1,30 @@
+Project will be a recipe keeping and sharing application. A user not signed in will see a couple of recently added recipes, to search more, or to save their own, they will need to log in.
+
+
+
+User model -
+-Screen name
+-email (private)
+-picture (not required, visible to other users)
+any information want to share with others - (not required, visible to other users)
+
+Cookbook model to hold recipes - private
+
+Recipe model recipe can be private or can share with other users - 
+name - 
+ingredients listed - 
+directions - 
+other information - 
+picture(not required)
+user comments/experiences from other users
+favorite button
+
+public view of a user
+shared recipes
+recipes they have commented on
+Favorite recipes
+
+landing page - not logged in
+Recently shared recipes
+sign-up at the bottom
+click any link go to sign-up page

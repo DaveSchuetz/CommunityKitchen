@@ -1,0 +1,15 @@
+<div class="recipe-list">
+<p class="title">Recipes</p>
+{{#if user.recipes}}
+    <div>
+      {{#each user.recipes}}
+         {{> 'recipe'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Recipes yet</p>
+  {{/if}}
+  </div>
+  <form action="/recipe/new" method="get">
+  <input class="input" type="submit" value="Add Recipe">
+  </form>

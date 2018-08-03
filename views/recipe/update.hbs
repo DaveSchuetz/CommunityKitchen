@@ -1,0 +1,29 @@
+<section>
+    {{#if message}}
+        <div>{{message}}</div>
+    {{/if}}
+    <h3>Update Recipe</h3>
+    <form action="/recipe/{{recipe.id}}" method="POST">
+        <p>
+            <input type="name" name="name" value="{{recipe.name}}" required>
+        </p>
+        <p>Brief Description</p>
+            <p>
+                <textarea rows="4" cols="50" name="description">{{recipe.description}}</textarea>
+            </p>
+        <p>Directions</p>
+            <p>
+                <textarea rows="4" cols="50" name="directions" required>{{recipe.directions}}</textarea>
+            </p>
+        <p>Other information..</p>
+            <p>
+                <textarea rows="4" cols="50" name="more">{{recipe.more}}</textarea>
+            </p>
+        <p>Ingredients</p>
+            <p class="info">One ingredient per line</p>
+            <p>
+                <textarea rows="4" cols="50" name="ingredient" required>{{recipe.ingredient}}</textarea>
+            </p>
+        <input class="btn" type="submit">
+    </form>
+</section>
