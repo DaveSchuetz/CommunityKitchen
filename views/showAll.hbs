@@ -1,0 +1,14 @@
+<section>
+<p class="title">All Recipes</p>
+
+  {{#if recipes}}
+    <div class="recipes">
+      {{#each recipes}}
+         {{> 'home'}}
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if message}}
+        <div>{{message}}</div>
+    {{/if}}
+</section>

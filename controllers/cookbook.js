@@ -3,13 +3,13 @@ const Cookbook = require('../models/Cookbook')
 module.exports = {
     show: (req, res) => {
         Cookbook.findOne({ _id: req.params.id })
-          .populate("author")
+          .populate('author')
           .then(cookbook =>{
-            res.render("cookbook/show", {cookbook})
+            res.render('cookbook/show', {cookbook})
           })
       },
       new: (req, res) => {
-        res.render("cookbook/new")
+        res.render('cookbook/new')
       },
       create: (req, res) => {
         Cookbook.create({
@@ -25,7 +25,7 @@ module.exports = {
       edit: (req, res) =>{
         Cookbook.findOne({ _id: req.params.id })
         .then(cookbook =>{
-          res.render("cookbook/update",{cookbook})
+          res.render('cookbook/update',{cookbook})
         })
     },
       update: (req, res) =>{
@@ -39,7 +39,7 @@ module.exports = {
       delete: (req, res) => {
         Cookbook.findOneAndRemove({ _id: req.params.id})
         .then(() =>{
-            res.redirect('/')
+          res.redirect(`/user/${req.user._id}`)
         })
       }
     }
