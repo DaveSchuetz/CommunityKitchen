@@ -1,16 +1,16 @@
-const Recipe = require("../models/Recipe")
+const Recipe = require('../models/Recipe')
+
 
 module.exports = {
   show: (req, res) => {
     Recipe.findOne({ _id: req.params.id })
-      .populate("author")
+      .populate('author')
       .then(recipe =>{
-        res.render("recipe/show", {recipe})
+        res.render('recipe/show', {recipe})
       })
   },
-  
   new: (req, res) => {
-    res.render("recipe/new")
+    res.render('recipe/new')
   },
   create: (req, res) => {
     Recipe.create({
@@ -30,7 +30,7 @@ module.exports = {
   edit: (req, res) =>{
     Recipe.findOne({ _id: req.params.id })
     .then(recipe =>{
-      res.render("recipe/update",{recipe})
+      res.render('recipe/update',{recipe})
     })
 },
   update: (req, res) =>{
@@ -48,7 +48,7 @@ module.exports = {
   delete: (req, res) => {
     Recipe.findOneAndRemove({ _id: req.params.id})
     .then(() =>{
-        res.redirect('/')
+        res.redirect(`/user/${req.user._id}`)
     })
   }
 }

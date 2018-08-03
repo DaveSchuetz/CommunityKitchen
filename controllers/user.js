@@ -1,41 +1,41 @@
-const User = require("../models/User")
-const Recipe = require("../models/Recipe")
+const User = require('../models/User')
+const Recipe = require('../models/Recipe')
 const Cookbook = require('../models/Cookbook')
-const passport = require("passport")
+const passport = require('passport')
 
 
 module.exports = {
     show: (req, res) =>{
         User.findOne({ _id: req.params.id})
         .then(user => {
-            res.render("user/show", {user})
+            res.render('user/show', {user})
         })
     },
     login: (req, res) => {
-        res.render("user/login", {message: req.flash("loginMessage")})
+        res.render('user/login', {message: req.flash('loginMessage')})
     },
     createLogin: (req, res) => {
-        const login = passport.authenticate("local-login", {
-          successRedirect: "/",
-          failureRedirect: "/user/login",
+        const login = passport.authenticate('local-login', {
+          successRedirect: '/',
+          failureRedirect: '/user/login',
           failureFlash: true
         })
         return login(req,res)
     },
     signUp: (req,res) => {
-        res.render("user/signup", {message: req.flash("signupMessage")})
+        res.render('user/signup', {message: req.flash('signupMessage')})
     },
     createSignUp: (req, res) => {
-        const signup = passport.authenticate("local-signup", {
-          successRedirect: "/",
-          failureRedirect: "/user/signup",
+        const signup = passport.authenticate('local-signup', {
+          successRedirect: '/',
+          failureRedirect: '/user/signup',
           failureFlash: true
         })
         return signup(req, res)
       },
     logout: (req, res) => {
         req.logout();
-        res.redirect("/")
+        res.redirect('/')
       },
     remove: (req,res, next) => {
         Recipe.deleteMany({ author: req.params.id})
@@ -57,22 +57,22 @@ module.exports = {
     },
     recipes: (req, res) =>{
         User.findOne({ _id: req.params.id})
-        .populate("recipes")
+        .populate('recipes')
         .then(user => {
-            res.render("user/recipes", {user})
+            res.render('user/recipes', {user})
         })
     },
     cookbooks: (req, res) =>{
         User.findOne({ _id: req.params.id})
-        .populate("cookbooks")
+        .populate('cookbooks')
         .then(user => {
-            res.render("user/cookbooks", {user})
+            res.render('user/cookbooks', {user})
         })
     },
     edit: (req, res) =>{
         User.findOne({ _id: req.params.id })
         .then(user =>{
-          res.render("user/update",{user})
+          res.render('user/update',{user})
         })
     },
       update: (req, res) =>{

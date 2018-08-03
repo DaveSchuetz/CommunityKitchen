@@ -23,7 +23,6 @@ server.use(passport.session())
 server.use(methodOverride('_method'))
 server.use(function(req, res, next) {
   res.locals.currentUser = req.user
-  // console.log(req.user)
   next()
 })
 server.use(flash())
