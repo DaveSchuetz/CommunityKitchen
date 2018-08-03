@@ -13,7 +13,7 @@ module.exports = {
       },
       create: (req, res) => {
         Cookbook.create({
-          name: req.body.name,
+          title: req.body.title,
           author: req.user._id
         }).then(cookbook => {
           req.user.cookbooks.push(cookbook)

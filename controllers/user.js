@@ -1,5 +1,6 @@
 const User = require("../models/User")
 const Recipe = require("../models/Recipe")
+const Cookbook = require('../models/Cookbook')
 const passport = require("passport")
 
 
@@ -38,6 +39,12 @@ module.exports = {
       },
     remove: (req,res, next) => {
         Recipe.deleteMany({ author: req.params.id})
+        .then(() => {
+            next()
+        })
+    },
+    delCB: (req,res,next) => {
+        Cookbook.deleteMany({ author: req.params.id})
         .then(() => {
             next()
         })

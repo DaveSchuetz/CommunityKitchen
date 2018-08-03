@@ -10,3 +10,6 @@
     <p>No Recipes yet</p>
   {{/if}}
 </section>
+<form action="/cookbook/{{cookbook.id}}?_method=DELETE" method="POST">
+  <input class="input delete" type="submit" value="Remove cookbook">
+  </form>

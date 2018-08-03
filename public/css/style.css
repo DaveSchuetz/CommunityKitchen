@@ -36,7 +36,7 @@ header{
         padding-left: 220px; /* 180 + 40 */
     }
 }
-#user-delete{
+.delete{
     float: right;
 }
 a{

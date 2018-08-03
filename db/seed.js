@@ -9,6 +9,7 @@ const createPassword = password =>
 
 User.find({}).remove(() => {
       Recipe.find({}).remove(() => {
+        Cookbook.find({}).remove(() => {
         User.create({
             local: {
                 screenName: "Tony",
@@ -72,3 +73,4 @@ User.find({}).remove(() => {
         })
       })
     })
+})
