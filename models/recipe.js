@@ -1,4 +1,4 @@
-const mongoose = require("../db/connection")
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 const Recipe = new Schema({
     name: String,
@@ -8,11 +8,11 @@ const Recipe = new Schema({
     more: String,
     author:{
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: 'User'
     },
     createdAt: {
         type: Date,
         default: Date.now()
       }
 })
-module.exports = mongoose.model("Recipe", Recipe)
+module.exports = mongoose.model('Recipe', Recipe)

@@ -1,15 +1,15 @@
-const mongoose = require("../db/connection")
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 const Cookbook = new Schema({
     title: String,
     author:{
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: 'User'
     },
     recipes: [{
         type: Schema.Types.ObjectId,
-        ref: "Recipe"
+        ref: 'Recipe'
 }]
 })
 
-module.exports = mongoose.model("Cookbook", Cookbook)
+module.exports = mongoose.model('Cookbook', Cookbook)
