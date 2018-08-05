@@ -91,4 +91,7 @@ a{
     color: rgb(165, 69, 69);
     font-weight: bold;
 }
-
+.recipe-title {
+    font-size: 35px;
+    font-weight: bold;
+}
