@@ -7,15 +7,16 @@ Application is deployed on Heroku here: https://community-kitchen.herokuapp.com/
 
 
 ## Built With
-*[Node.js](https://nodejs.org/en/)
-*[Express Framework](https://expressjs.com/)
-*[HBS](https://www.npmjs.com/package/hbs)
-*[Mongoose}](http://mongoosejs.com/)
-*[MongoDB](https://www.mongodb.com/)
-*[Passport.js](http://www.passportjs.org/)
-*[mLab](https://mlab.com/) - Host for MogoDB
-*[Heroku](https://www.heroku.com/) - Host for application
-*[Bootstrap](https://getbootstrap.com/)
+* [Node.js](https://nodejs.org/en/)
+* [Express Framework](https://expressjs.com/)
+* [HBS](https://www.npmjs.com/package/hbs)
+* [Mongoose}](http://mongoosejs.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Passport.js](http://www.passportjs.org/)
+* [mLab](https://mlab.com/) - Host for MogoDB
+* [Heroku](https://www.heroku.com/) - Host for application
+* [Bootstrap](https://getbootstrap.com/)
 
-##Written By
+
+## Written By
 * **Dave Schuetz**
