@@ -13,7 +13,7 @@ Application is deployed on Heroku here: https://community-kitchen.herokuapp.com/
 * [Mongoose}](http://mongoosejs.com/)
 * [MongoDB](https://www.mongodb.com/)
 * [Passport.js](http://www.passportjs.org/)
-* [mLab](https://mlab.com/) - Host for MogoDB
+* [mLab](https://mlab.com/) - Host for MongoDB
 * [Heroku](https://www.heroku.com/) - Host for application
 * [Bootstrap](https://getbootstrap.com/)
 
