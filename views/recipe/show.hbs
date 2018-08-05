@@ -14,6 +14,12 @@
     <p><a href="/recipe/{{recipe.id}}/edit">Edit</a></p>
     <h4>Posted by {{recipe.author.local.screenName}}</h4>
 </section> 
+<select>
+    <option selected disabled hidden>Add to your cookbook</option>
+    {{#each currentUser.cookbooks}}
+    <option>{{user.cookbooks}}</option>
+    {{/each}}
+</select>
 
 <form action="/recipe/{{recipe.id}}?_method=DELETE" method="POST">
   <input class="input delete" type="submit" value="Remove recipe">

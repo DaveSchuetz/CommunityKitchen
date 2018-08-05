@@ -13,6 +13,10 @@ const Recipe = new Schema({
     createdAt: {
         type: Date,
         default: Date.now()
-      }
+    },
+    cookbook:{
+        type: Schema.Types.ObjectId,
+        ref: 'Cookbook'
+    }
 })
 module.exports = mongoose.model('Recipe', Recipe)

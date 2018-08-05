@@ -86,5 +86,14 @@ module.exports = {
         }).then(user =>{
           res.redirect(`/user/${user._id}`)
         })
-      }
+      },
+    add: (req,res) =>{
+        Recipe.findOne({_id: req.params.id})
+        .then(recipe =>{
+            req.cookbook.recipes.push(recipe)
+            req.cookbook.save(err => {
+                res.redirect('/')
+              })
+        })
+    }
 }

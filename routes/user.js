@@ -13,6 +13,7 @@ router.get("/:id/edit", currentUser, userController.edit)
 router.post("/:id", currentUser, userController.update)
 router.get('/logout', userController.logout)
 router.get('/:id', currentUser, userController.show)
+router.post('/add', userController.add)
 router.delete('/:id', currentUser, userController.remove, userController.delCB, userController.delete)
 function currentUser(req, res, next){
     User.findOne({_id: req.params.id})
