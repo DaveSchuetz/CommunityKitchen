@@ -1,13 +1,11 @@
-const User = require('../models/User')
 const Recipe = require('../models/Recipe')
-const Cookbook = require('../models/Cookbook')
+
 
 
 module.exports = {
   show: (req, res) => {
     Recipe.findOne({ _id: req.params.id })
       .populate('author')
-      .populate('cookbook')
       .then(recipe =>{
         res.render('recipe/show', {recipe})
       })

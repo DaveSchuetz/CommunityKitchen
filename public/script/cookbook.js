@@ -1,7 +1,7 @@
-let current =""
-
-function test(){
-    current = req.params.id
-    console.log(current)
+//onchange event needs to call funtion that will take information and use ajax to send to node and a new controller to lisgten for the change
+let newCB =''
+function getCB(){
+    const cookbook = document.getElementById('addCB')
+    newCB = cookbook.options[cookbook.selectedIndex].text
+    console.log(newCB)
 }
-test()

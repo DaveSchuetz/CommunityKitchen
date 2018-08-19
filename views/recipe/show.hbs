@@ -14,10 +14,10 @@
     <p><a href="/recipe/{{recipe.id}}/edit">Edit</a></p>
     <h4>Posted by {{recipe.author.local.screenName}}</h4>
 </section> 
-<select>
+<select id="addCB" onchange="getCB()">
     <option selected disabled hidden>Add to your cookbook</option>
     {{#each currentUser.cookbooks}}
-    <option>{{this}}</option>
+    <option id={{@key}}>{{this}}</option>
     {{/each}}
 </select>
 
