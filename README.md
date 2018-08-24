@@ -1,4 +1,4 @@
-#Community Kitchen - Web Application
+# Community Kitchen - Web Application
 
 ## Description
 Project to build a full stack MEHN application. This application is a recipe sharing social media site. Written using rMVC framework. As someone goes to the page, where they will see the 5 most recently created recipes, they would need to sign in to see any more recipes or to share their own.
