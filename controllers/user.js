@@ -75,7 +75,7 @@ module.exports = {
           res.render('user/update',{user})
         })
     },
-      update: (req, res) =>{
+    update: (req, res) =>{
         User.findOneAndUpdate({ _id: req.params.id },
         {
             local:{
@@ -84,16 +84,17 @@ module.exports = {
                 screenName: req.body.screenName
             }
         }).then(user =>{
-          res.redirect(`/user/${user._id}`)
+            res.redirect(`/user/${user._id}`)
         })
-      },
-    add: (req,res) =>{
-        Recipe.findOne({_id: req.params.id})
-        .then(recipe =>{
-            req.cookbook.recipes.push(recipe)
-            req.cookbook.save(err => {
-                res.redirect('/')
-              })
+    },
+    addCB: (req,res) =>{
+        Recipe.findOne({_id: req.params.id},
+            console.log(req))
+        .then(()=>{
+            res.redirect('/')
         })
+    },
+    add: (req,res) => {
+        res.redirect('/')
     }
 }

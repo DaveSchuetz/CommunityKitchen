@@ -5,3 +5,6 @@ function getCB(){
     newCB = cookbook.options[cookbook.selectedIndex].text
     console.log(newCB)
 }
+function addCB(){
+    console.log(newCB)
+}

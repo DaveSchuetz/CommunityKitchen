@@ -10,17 +10,19 @@
     <p>{{recipe.description}}</p>
     <h3>More Info</h3>
     <p>{{recipe.more}}</p>
-{{#ifCond currentUser.id recipe.author.id}}
-    <p><a href="/recipe/{{recipe.id}}/edit">Edit</a></p>
     <h4>Posted by {{recipe.author.local.screenName}}</h4>
+    <select id="addCB" onchange="getCB()">
+        <option selected disabled hidden>Add to your cookbook</option>
+        {{#each currentUser.cookbooks}}
+        <option id={{@key}}>{{this}}</option>
+        {{/each}}
+    </select>
+    <form action="/add/{{recipe.id}}" method="POST">
+        <input class="input" type="submit" value="Add">
+    </form>
+{{#ifCond currentUser.id recipe.author.id}}
+    <a href="/recipe/{{recipe.id}}/edit" class="edit">Edit</a>
 </section> 
-<select id="addCB" onchange="getCB()">
-    <option selected disabled hidden>Add to your cookbook</option>
-    {{#each currentUser.cookbooks}}
-    <option id={{@key}}>{{this}}</option>
-    {{/each}}
-</select>
-
 <form action="/recipe/{{recipe.id}}?_method=DELETE" method="POST">
   <input class="input delete" type="submit" value="Remove recipe">
   </form>

@@ -101,3 +101,6 @@ a{
     font-size: 35px;
     font-weight: bold;
 }
+.edit{
+    float: right;
+}
